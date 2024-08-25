@@ -15,7 +15,7 @@ const NavigationPanel = () => {
         const data = await getContactList();
         setContacts(data);
       } catch (error) {
-        console.log("failed to fetch contacts: ", error);
+        console.error("failed to fetch contacts: ", error);
       }
     };
 
