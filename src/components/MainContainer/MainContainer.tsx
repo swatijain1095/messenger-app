@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { ContactContext } from "../../context";
 import ContactCard from "../ContactCard/ContactCard";
 import "./style.scss";
-import { getMessages } from "../../api";
+import { addMessage, getMessages } from "../../api";
 import { MessageI } from "../../types";
 import Message from "../Message/Message";
 import UserInput from "../UserInput/UserInput";
@@ -28,6 +28,30 @@ const MainContainer = () => {
     selectedContactId && fetchMessages();
   }, [selectedContactId, userId]);
 
+  const handleSendMessage = async (messageText: string) => {
+    if (!selectedContact) return;
+
+    const tag = [userId, selectedContactId].sort().join("");
+
+    const newMessage: MessageI = {
+      sender: userId,
+      receiver: selectedContactId,
+      tag,
+      message: messageText,
+      timeStamp: new Date().toISOString(),
+    };
+
+    try {
+      const addedMessage = await addMessage(newMessage);
+      setConversations((prevConversations) => [
+        ...prevConversations,
+        addedMessage,
+      ]);
+    } catch (error) {
+      console.error("Failed to send message: ", error);
+    }
+  };
+
   return (
     <div className="main-container">
       {selectedContact ? (
@@ -43,7 +67,10 @@ const MainContainer = () => {
                 return <Message key={index} message={message} />;
               })}
             </div>
-            <UserInput className="main-container__footer" />
+            <UserInput
+              className="main-container__footer"
+              onSendMessage={handleSendMessage}
+            />
           </div>
         </>
       ) : (

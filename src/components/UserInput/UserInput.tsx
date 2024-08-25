@@ -5,10 +5,18 @@ import "./style.scss";
 
 interface UserInputProps {
   className?: string;
+  onSendMessage: (message: string) => void;
 }
 
-const UserInput = ({ className }: UserInputProps) => {
+const UserInput = ({ className, onSendMessage }: UserInputProps) => {
   const [inputValue, setInputValue] = useState("");
+
+  const handleSendClick = () => {
+    if (inputValue.trim() !== "") {
+      onSendMessage(inputValue);
+      setInputValue("");
+    }
+  };
 
   return (
     <div className={classNames("user-input", className)}>
@@ -17,8 +25,11 @@ const UserInput = ({ className }: UserInputProps) => {
         placeholder="Type message here.."
         value={inputValue}
         onChange={(e) => setInputValue(e.target.value)}
+        onKeyDown={(e) => {
+          e.key === "Enter" && handleSendClick();
+        }}
       />
-      <button>
+      <button onClick={handleSendClick}>
         <IoMdSend size={20} />
       </button>
     </div>
