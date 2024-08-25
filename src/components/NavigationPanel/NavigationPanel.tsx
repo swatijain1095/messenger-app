@@ -1,7 +1,11 @@
-import React from "react";
+import "./style.scss";
 
 const NavigationPanel = () => {
-  return <div>NavigationPanel</div>;
+  return (
+    <div className="navigation-panel">
+      <header className="navigation-panel__header">Messenger App</header>
+    </div>
+  );
 };
 
 export default NavigationPanel;

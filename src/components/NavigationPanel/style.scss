@@ -1,0 +1,14 @@
+@import "../../variables";
+
+.navigation-panel {
+  border-right: 1px solid $gray-2;
+  overflow: auto;
+  width: 33.33%;
+
+  &__header {
+    text-align: center;
+    font-size: xx-large;
+    font-weight: 600;
+    padding: $medium;
+  }
+}
