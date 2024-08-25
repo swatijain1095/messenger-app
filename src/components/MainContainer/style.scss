@@ -8,6 +8,14 @@
   justify-content: space-between;
   position: relative;
 
+  .scroll-container {
+    overflow-y: scroll;
+  }
+
+  .scroll-container::-webkit-scrollbar {
+    display: none;
+  }
+
   &__messages {
     display: flex;
     flex-direction: column;

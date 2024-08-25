@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { ContactContext } from "../../context";
 import ContactCard from "../ContactCard/ContactCard";
 import "./style.scss";
@@ -14,6 +14,7 @@ const MainContainer = () => {
   } = useContext(ContactContext);
   const { id: selectedContactId = "" } = selectedContact || {};
   const [conversations, setConversations] = useState<MessageI[]>([]);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -27,6 +28,10 @@ const MainContainer = () => {
 
     selectedContactId && fetchMessages();
   }, [selectedContactId, userId]);
+
+  useEffect(() => {
+    scrollRef.current?.scrollTo(0, scrollRef.current.scrollHeight);
+  }, [conversations.length]);
 
   const handleSendMessage = async (messageText: string) => {
     if (!selectedContact) return;
@@ -61,7 +66,7 @@ const MainContainer = () => {
             style={{ backgroundColor: "#ffffff" }}
             className="main-container__contact-card"
           />
-          <div className="scroll-container">
+          <div className="scroll-container" ref={scrollRef}>
             <div className="main-container__messages">
               {conversations.map((message, index) => {
                 return <Message key={index} message={message} />;
