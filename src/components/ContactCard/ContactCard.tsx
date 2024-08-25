@@ -8,6 +8,7 @@ interface ContactCardProps {
   className?: string;
   onSelectContact?: (contact: UserI) => void;
   isActive?: boolean;
+  style?: React.CSSProperties;
 }
 
 const ContactCard = ({
@@ -15,6 +16,7 @@ const ContactCard = ({
   className,
   onSelectContact,
   isActive,
+  style,
 }: ContactCardProps) => {
   const { name, image } = contact;
 
@@ -30,6 +32,7 @@ const ContactCard = ({
         isActive && "contact-card--active",
         className
       )}
+      style={style}
       onClick={handleSelect}
     >
       <img className="contact-card__image" src={image} alt={name} />
