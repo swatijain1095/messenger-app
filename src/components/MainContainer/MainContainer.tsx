@@ -5,6 +5,7 @@ import "./style.scss";
 import { getMessages } from "../../api";
 import { MessageI } from "../../types";
 import Message from "../Message/Message";
+import UserInput from "../UserInput/UserInput";
 
 const MainContainer = () => {
   const {
@@ -42,6 +43,7 @@ const MainContainer = () => {
                 return <Message key={index} message={message} />;
               })}
             </div>
+            <UserInput className="main-container__footer" />
           </div>
         </>
       ) : (
