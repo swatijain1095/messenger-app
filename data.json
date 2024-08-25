@@ -1,0 +1,181 @@
+{
+  "contactList": [
+    {
+      "id": "201",
+      "name": "Scarlet Johansson",
+      "image": "https://picsum.photos/seed/201/200/200"
+    },
+    {
+      "id": "202",
+      "name": "Kevin Spacey",
+      "image": "https://picsum.photos/seed/202/200/200"
+    },
+    {
+      "id": "203",
+      "name": "Osuman Malek",
+      "image": "https://picsum.photos/seed/203/200/200"
+    }
+  ],
+  "messages": [
+    {
+      "id": "1",
+      "sender": "101",
+      "receiver": "201",
+      "tag": "101201",
+      "message": "Hey Scarlet, how's it going?",
+      "timeStamp": "2024-08-25T09:00:00Z"
+    },
+    {
+      "id": "2",
+      "sender": "201",
+      "receiver": "101",
+      "tag": "101201",
+      "message": "Hi Martha! I'm doing well, thanks. How about you?",
+      "timeStamp": "2024-08-25T09:02:00Z"
+    },
+    {
+      "id": "3",
+      "sender": "101",
+      "receiver": "201",
+      "tag": "101201",
+      "message": "I'm good too, just been busy with work. What have you been up to?",
+      "timeStamp": "2024-08-25T09:05:00Z"
+    },
+    {
+      "id": "4",
+      "sender": "201",
+      "receiver": "101",
+      "tag": "101201",
+      "message": "Same here, lots of work. But I managed to take a short trip last weekend.",
+      "timeStamp": "2024-08-25T09:07:00Z"
+    },
+    {
+      "id": "5",
+      "sender": "101",
+      "receiver": "201",
+      "tag": "101201",
+      "message": "That sounds nice! Where did you go?",
+      "timeStamp": "2024-08-25T09:10:00Z"
+    },
+    {
+      "id": "6",
+      "sender": "201",
+      "receiver": "101",
+      "tag": "101201",
+      "message": "I went to the mountains. It was a great way to relax and recharge.",
+      "timeStamp": "2024-08-25T09:12:00Z"
+    },
+    {
+      "id": "7",
+      "sender": "101",
+      "receiver": "201",
+      "tag": "101201",
+      "message": "That sounds amazing. I could use a trip like that!",
+      "timeStamp": "2024-08-25T09:15:00Z"
+    },
+    {
+      "id": "8",
+      "sender": "201",
+      "receiver": "101",
+      "tag": "101201",
+      "message": "You definitely should! It's important to take breaks.",
+      "timeStamp": "2024-08-25T09:18:00Z"
+    },
+    {
+      "id": "9",
+      "sender": "101",
+      "receiver": "201",
+      "tag": "101201",
+      "message": "Absolutely. I think I'll plan something for next month.",
+      "timeStamp": "2024-08-25T09:20:00Z"
+    },
+    {
+      "id": "10",
+      "sender": "201",
+      "receiver": "101",
+      "tag": "101201",
+      "message": "That sounds like a plan! Let me know if you need any suggestions.",
+      "timeStamp": "2024-08-25T09:22:00Z"
+    },
+    {
+      "id": "11",
+      "sender": "101",
+      "receiver": "202",
+      "tag": "101202",
+      "message": "Hey Kevin, did you watch the game last night?",
+      "timeStamp": "2024-08-25T10:00:00Z"
+    },
+    {
+      "id": "12",
+      "sender": "202",
+      "receiver": "101",
+      "tag": "101202",
+      "message": "Hey Martha! Yes, I did. It was intense!",
+      "timeStamp": "2024-08-25T10:02:00Z"
+    },
+    {
+      "id": "13",
+      "sender": "101",
+      "receiver": "202",
+      "tag": "101202",
+      "message": "I know, right? I was on the edge of my seat!",
+      "timeStamp": "2024-08-25T10:04:00Z"
+    },
+    {
+      "id": "14",
+      "sender": "202",
+      "receiver": "101",
+      "tag": "101202",
+      "message": "Same here. We should watch the next game together.",
+      "timeStamp": "2024-08-25T10:06:00Z"
+    },
+    {
+      "id": "15",
+      "sender": "101",
+      "receiver": "202",
+      "tag": "101202",
+      "message": "That sounds like a plan!",
+      "timeStamp": "2024-08-25T10:08:00Z"
+    },
+    {
+      "id": "16",
+      "sender": "101",
+      "receiver": "203",
+      "tag": "101203",
+      "message": "Hi Osuman, how's your new project coming along?",
+      "timeStamp": "2024-08-25T11:00:00Z"
+    },
+    {
+      "id": "17",
+      "sender": "203",
+      "receiver": "101",
+      "tag": "101203",
+      "message": "Hey Martha! It's going well, thanks for asking. How about you?",
+      "timeStamp": "2024-08-25T11:02:00Z"
+    },
+    {
+      "id": "18",
+      "sender": "101",
+      "receiver": "203",
+      "tag": "101203",
+      "message": "Glad to hear that! I'm just wrapping up a few things on my end.",
+      "timeStamp": "2024-08-25T11:04:00Z"
+    },
+    {
+      "id": "19",
+      "sender": "203",
+      "receiver": "101",
+      "tag": "101203",
+      "message": "Nice! Let me know if you need any help.",
+      "timeStamp": "2024-08-25T11:06:00Z"
+    },
+    {
+      "id": "20",
+      "sender": "101",
+      "receiver": "203",
+      "tag": "101203",
+      "message": "Will do, thanks!",
+      "timeStamp": "2024-08-25T11:08:00Z"
+    }
+  ]
+}
