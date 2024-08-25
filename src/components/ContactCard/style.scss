@@ -7,6 +7,12 @@
   align-items: center;
   padding: $medium;
 
+  &:hover,
+  &--active {
+    cursor: pointer;
+    background-color: $gray-1;
+  }
+
   &__image {
     width: 40px;
     height: 40px;
