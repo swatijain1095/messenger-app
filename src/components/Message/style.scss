@@ -1,0 +1,18 @@
+@import "../../variables";
+
+.message {
+  &__content {
+    border-radius: $small;
+    padding: $small;
+
+    &--right {
+      float: right;
+      background-color: $gray-3;
+    }
+
+    &--left {
+      float: left;
+      background-color: $gray-2;
+    }
+  }
+}

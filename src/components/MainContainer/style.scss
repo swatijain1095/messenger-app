@@ -7,6 +7,15 @@
   flex-direction: column;
   justify-content: space-between;
 
+  &__messages {
+    display: flex;
+    flex-direction: column;
+    gap: $small;
+    padding: $small;
+    justify-content: end;
+    padding-bottom: 2.8rem + $small;
+  }
+
   &__default {
     display: flex;
     justify-content: center;
