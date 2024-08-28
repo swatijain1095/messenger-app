@@ -11,10 +11,14 @@ const MainContainer = () => {
   const {
     selectedContact,
     user: { id: userId },
+    setDraftMessages,
+    draftMessages,
   } = useContext(ContactContext);
   const { id: selectedContactId = "" } = selectedContact || {};
   const [conversations, setConversations] = useState<MessageI[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [inputValue, setInputValue] = useState("");
+  const prevContactRef = useRef<string | null>(null);
 
   useEffect(() => {
     const fetchMessages = async () => {
@@ -32,6 +36,36 @@ const MainContainer = () => {
   useEffect(() => {
     scrollRef.current?.scrollTo(0, scrollRef.current.scrollHeight);
   }, [conversations.length]);
+
+  // when selectedContact goes from null to something
+  // then I have to check if there is anything in draftMessage in contact
+  // then setInputValue with draft message
+
+  // when selectedContact is changed.
+  // then I have to update draftMessage for this and then empty the inputValue
+
+  useEffect(() => {
+    const prevContactId = prevContactRef.current;
+
+    if (prevContactId) {
+      if (inputValue) {
+        setDraftMessages((prevMessages) => {
+          return {
+            ...prevMessages,
+            [prevContactId]: inputValue,
+          };
+        });
+      }
+    }
+
+    if (draftMessages[selectedContactId]) {
+      setInputValue(draftMessages[selectedContactId]);
+    } else {
+      setInputValue("");
+    }
+
+    prevContactRef.current = selectedContactId;
+  }, [selectedContactId]);
 
   const handleSendMessage = async (messageText: string) => {
     if (!selectedContact) return;
@@ -52,6 +86,12 @@ const MainContainer = () => {
         ...prevConversations,
         addedMessage,
       ]);
+      setDraftMessages((prevMessages) => {
+        return {
+          ...prevMessages,
+          [selectedContactId]: "",
+        };
+      });
     } catch (error) {
       console.error("Failed to send message: ", error);
     }
@@ -75,6 +115,8 @@ const MainContainer = () => {
             <UserInput
               className="main-container__footer"
               onSendMessage={handleSendMessage}
+              inputValue={inputValue}
+              setInputValue={setInputValue}
             />
           </div>
         </>

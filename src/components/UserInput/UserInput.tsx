@@ -6,11 +6,16 @@ import "./style.scss";
 interface UserInputProps {
   className?: string;
   onSendMessage: (message: string) => void;
+  inputValue: string;
+  setInputValue: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const UserInput = ({ className, onSendMessage }: UserInputProps) => {
-  const [inputValue, setInputValue] = useState("");
-
+const UserInput = ({
+  className,
+  onSendMessage,
+  inputValue,
+  setInputValue,
+}: UserInputProps) => {
   const handleSendClick = () => {
     if (inputValue.trim() !== "") {
       onSendMessage(inputValue);
